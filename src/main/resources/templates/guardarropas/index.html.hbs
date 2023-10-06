@@ -1,0 +1,20 @@
+
+{{#partial "principal" }}
+
+<div>
+    <h2>Tus guardarropas:</h2>
+
+    <ul class="listado-guardarropas">
+      {{#guardarropas}}
+        <li>
+            <a href="/guardarropas/{{id}}">
+                {{nombre}}
+            </a>
+        </li>
+      {{/guardarropas}}
+    </ul>
+</div>
+
+{{/partial}}
+
+{{> layout.html.hbs }}

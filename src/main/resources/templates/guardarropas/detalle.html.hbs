@@ -1,0 +1,19 @@
+
+{{#partial "principal" }}
+
+<div>
+    <h2>{{guardarropas.nombre}}</h2>
+
+    <h3>Prendas:</h2>
+    <ul class="listado-guardarropas">
+      {{#guardarropas.prendas}}
+        <li>
+            {{nombre}}
+        </li>
+      {{/guardarropas.prendas}}
+    </ul>
+</div>
+
+{{/partial}}
+
+{{> layout.html.hbs }}
