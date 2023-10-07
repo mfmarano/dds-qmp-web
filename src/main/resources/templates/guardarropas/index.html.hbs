@@ -4,12 +4,12 @@
 <div>
     <h2>Tus guardarropas:</h2>
 
-    <ul class="listado-guardarropas">
+    <ol>
       {{#guardarropas}}
         <li>
-            <a href="/guardarropas/{{id}}">
+            <strong><a href="/guardarropas/{{id}}">
                 {{nombre}}
-            </a>
+            </a></strong>
         </li>
       {{/guardarropas}}
     </ul>
