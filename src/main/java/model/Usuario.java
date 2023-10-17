@@ -34,4 +34,8 @@ public class Usuario extends BaseEntity {
     this.guardarropas.add(guardarropa);
   }
 
+  public Collection<Guardarropa> getGuardarropas() {
+    return guardarropas;
+  }
+
 }

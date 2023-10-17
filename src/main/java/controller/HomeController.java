@@ -13,7 +13,10 @@ public class HomeController implements WithSimplePersistenceUnit {
 
   public ModelAndView home(Request request, Response response) {
     Map<String, Object> modelo = new HashMap<>();
+
     modelo.put("anio", LocalDate.now().getYear());
+    modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
+
     return new ModelAndView(modelo, "index.html.hbs");
   }
 }

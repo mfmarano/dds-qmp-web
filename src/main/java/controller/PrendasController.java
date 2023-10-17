@@ -15,7 +15,10 @@ public class PrendasController implements WithSimplePersistenceUnit {
     var id = Long.parseLong(request.params("id"));
 
     Map<String, Object> modelo = new HashMap<>();
+
     modelo.put("anio", LocalDate.now().getYear());
+    modelo.put("sesionIniciada", request.session().attribute("user_id") != null);
+
     modelo.put("guardarropas", RepositorioGuardarropas.instance().obtener(id));
     return new ModelAndView(modelo, "prendas/detalle.html.hbs");
   }
