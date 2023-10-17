@@ -24,7 +24,7 @@ public class Bootstrap implements WithSimplePersistenceUnit {
       var guardarropa = new Guardarropa("primavera");
       guardarropa.agregarPrenda(pantalon);
 
-      var usuario = new Usuario("dani", "dani@dani.com");
+      var usuario = new Usuario("dani", "dani@dani.com", "123456");
       usuario.agregarGuardarropa(guardarropa);
 
       persist(usuario);

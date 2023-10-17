@@ -1,13 +1,14 @@
 package db;
 
-import io.github.flbulgarelli.jpa.extras.test.SimplePersistenceTest;
-import model.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.math.BigDecimal;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import io.github.flbulgarelli.jpa.extras.test.SimplePersistenceTest;
+import model.Color;
+import model.Guardarropa;
+import model.Prenda;
+import model.RepositorioGuardarropas;
+import model.Usuario;
+import org.junit.jupiter.api.Test;
 
 public class ContextTest implements SimplePersistenceTest {
 
@@ -18,7 +19,7 @@ public class ContextTest implements SimplePersistenceTest {
     var guardarropa = new Guardarropa("primavera");
     guardarropa.agregarPrenda(pantalon);
 
-    var usuario = new Usuario("dani", "dani@dani.com");
+    var usuario = new Usuario("dani", "dani@dani.com", "123456");
     usuario.agregarGuardarropa(guardarropa);
 
     persist(usuario);

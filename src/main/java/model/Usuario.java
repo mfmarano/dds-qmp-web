@@ -1,5 +1,6 @@
 package model;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,18 +13,20 @@ public class Usuario extends BaseEntity {
   private String nombre;
 
   @Column
+  private String hashContrasenia;
+
+  @Column
   private String email;
 
   @OneToMany(cascade = CascadeType.PERSIST)
   @JoinColumn(name = "usuario_id")
   private Collection<Guardarropa> guardarropas = new ArrayList<>();
 
-  public Usuario() {
+  public Usuario() { }
 
-  }
-
-  public Usuario(String nombre, String email) {
+  public Usuario(String nombre, String email, String contrasenia) {
     this.nombre = nombre;
+    this.hashContrasenia = DigestUtils.sha256Hex(contrasenia);
     this.email = email;
   }
 
