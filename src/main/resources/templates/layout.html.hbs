@@ -8,7 +8,12 @@
     <div class="container">
     	<nav>
     	    <a href="/">🏠 Home</a>
-    	    <a href="/guardarropas">👖 Guardarropas</a>
+            {{#if sesionIniciada}}
+    	        <a href="/guardarropas">👖 Guardarropas</a>
+                <a href="/logout">Cerrar Sesión</a>
+            {{else}}
+                <a href="/login">Iniciar Sesión</a>
+            {{/if}}
     	</nav>
     	<main>
          {{#block "principal" }}
